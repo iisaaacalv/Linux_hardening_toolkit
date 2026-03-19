@@ -200,6 +200,4 @@ sudo dnf install iproute lsof e2fsprogs util-linux
 
 ---
 
-## 👨‍💻 Autor
-
-Desarrollado como proyecto de la asignatura de **Seguridad en Sistemas** · Curso 2024-2025
+## 👨‍💻 Autor Isaac Álvarez
