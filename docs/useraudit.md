@@ -175,3 +175,12 @@ WARNING,developer,sudo sin restricciones,Tiene acceso sudo ALL=(ALL) ALL
 - Requiere ejecutarse como `root` para leer `/etc/shadow`.
 - La detección de inactividad depende de que los logs de `lastlog` / `wtmp` estén disponibles y no hayan sido rotados.
 - Los usuarios de sistema conocidos (mysql, postgres, www-data, redis...) tienen su propia lista blanca para reducir falsos positivos en el módulo de shells.
+
+## Ejemplo de log
+```
+[2026-03-19 14:47:05] [CRITICAL] user=usuarioprueba  check=Sin contrasena establecida    detail=! en shadow — usuario humano (UID=1001) sin contrasena asignada
+[2026-03-19 14:47:05] [WARNING]  user=isaac          check=Sin caducidad de contrasena   detail=MAX_DAYS no configurado
+[2026-03-19 14:47:05] [WARNING]  user=postgres       check=Shell interactiva en servicio detail=shell=/bin/bash  UID=114
+[2026-03-19 14:47:05] [WARNING]  user=root           check=PermitRootLogin               detail=No configurado — revisar valor por defecto
+[2026-03-19 14:47:06] [INFO]     user=isaac          check=Nunca ha iniciado sesion      detail=UID=1000  shell=/usr/bin/zsh
+```
