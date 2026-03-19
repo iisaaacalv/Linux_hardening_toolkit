@@ -132,3 +132,12 @@ El indicador `⬤` es **rojo** si el puerto está expuesto al exterior y **verde
 - Sin `root`, los procesos asociados a algunos puertos pueden aparecer como `desconocido`.
 - La herramienta usa `ss` si está disponible; si no, cae back a `netstat`.
 - Para obtener el proceso asociado usa `ss`, `lsof` y `fuser` en ese orden.
+
+## Ejemplo de log (CSV)
+```
+proto,addr,port,servicio,riesgo,descripcion,proceso
+"tcp","0.0.0.0","6379","Redis","CRITICAL","Redis sin autenticacion tipica — NO debe estar expuesto","nc"
+"tcp","0.0.0.0","53","DNS","WARNING","DNS expuesto — verificar si es recursivo abierto","dnsmasq"
+"udp","0.0.0.0","53","DNS","WARNING","DNS expuesto — verificar si es recursivo abierto","dnsmasq"
+"tcp","0.0.0.0","22","SSH","INFO","SSH — revisar configuracion (PermitRootLogin, auth)","sshd"
+```
