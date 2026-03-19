@@ -99,3 +99,13 @@ Al finalizar se muestra un resumen con el total de hallazgos por nivel.
 
 - Sin `root` algunos análisis (SUID global, `/root`) pueden estar limitados.
 - Para corregir automáticamente los permisos detectados, usar [`fileshield`](fileshield.md).
+
+## Ejemplo de log
+```
+[2026-03-19 14:41:22] [SECTION]  Archivos world-writable (777 / o+w)
+[2026-03-19 14:41:22] [CRITICAL] Archivo world-writable: /tmp/archivo-peligroso.conf
+[2026-03-19 14:41:22] [FIX]      chmod o-w "/tmp/archivo-peligroso.conf"
+[2026-03-19 14:41:23] [CRITICAL] SUID NO reconocido: /opt/mi-herramienta-suid
+[2026-03-19 14:41:23] [FIX]      chmod u-s "/opt/mi-herramienta-suid"
+```
+
