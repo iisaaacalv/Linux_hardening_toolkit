@@ -148,3 +148,13 @@ Requiere que `mail` o `sendmail` estén configurados en el sistema. Envía un co
 - El `init` debe realizarse sobre un sistema en **estado conocido y limpio**. Un baseline generado sobre un sistema ya comprometido no tendrá valor.
 - Requiere ejecutarse como `root` para leer `/etc/shadow` y otros archivos protegidos.
 - El algoritmo `md5` no se recomienda para uso en producción por sus vulnerabilidades conocidas.
+
+## Ejemplo de log
+```
+[2026-03-19 14:45:33] [SECTION] Verificando Integridad
+[2026-03-19 14:45:33] [OK]      /etc/passwd
+[2026-03-19 14:45:33] [ALERT]   /etc/hosts -> MODIFICADO
+[2026-03-19 14:45:33] [ALERT]   /etc/sudoers -> MODIFICADO
+[2026-03-19 14:45:34] [DELETED] /etc/cron.d/backup -> ARCHIVO ELIMINADO
+```
+
