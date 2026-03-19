@@ -117,3 +117,12 @@ Este fichero permite auditar el estado previo o revertir manualmente si fuera ne
 
 - Requiere ejecutarse como `root`.
 - Se recomienda ejecutar siempre `--audit` antes de `--apply` en un sistema desconocido.
+
+## Ejemplo de log
+```
+[2026-03-19 14:43:10] [SECTION] Archivos criticos del sistema
+[2026-03-19 14:43:10] [ISSUE]   /etc/shadow tiene permisos 644 (esperado: 640)
+[2026-03-19 14:43:10] [FIXED]   chmod 640 "/etc/shadow"
+[2026-03-19 14:43:10] [FIXED]   chown root:shadow "/etc/shadow"
+[2026-03-19 14:43:11] [OK]      /etc/passwd — permisos 644
+```
